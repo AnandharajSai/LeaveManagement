@@ -1,6 +1,9 @@
 using LeaveManagement.Configuration;
+using LeaveManagement.Contracts;
 using LeaveManagement.Data;
 using LeaveManagement.Data.Migrations;
+using LeaveManagement.Repositories;
+using LeaveManagement.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +21,9 @@ builder.Services.AddControllersWithViews();
 
 //Adding auto mapper configurations
 builder.Services.AddAutoMapper(typeof(MapperConfig));
+//Adding Repositories
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<ILeaveTypeRepository,LeaveTypeRepository>();
 
 var app = builder.Build();
 
