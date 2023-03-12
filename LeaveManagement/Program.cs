@@ -1,3 +1,4 @@
+using LeaveManagement.Configuration;
 using LeaveManagement.Data;
 using LeaveManagement.Data.Migrations;
 using Microsoft.AspNetCore.Identity;
@@ -14,6 +15,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<Employee>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+//Adding auto mapper configurations
+builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 var app = builder.Build();
 
