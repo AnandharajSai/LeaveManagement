@@ -4,7 +4,9 @@ using LeaveManagement.Data;
 using LeaveManagement.Data.Migrations;
 using LeaveManagement.Repositories;
 using LeaveManagement.Repository;
+using LeaveManagement.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,8 +18,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<Employee>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+//Adding Mail Configuration
+builder.Services.AddTransient<IEmailSender>(e=> new EmailSender("localhost", 25, "no-reply@anand.com"));
 
 //Adding auto mapper configurations
 builder.Services.AddAutoMapper(typeof(MapperConfig));

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,18 +8,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20230318150703_AddDefaultUserRoleConfigurations.cs" />
+    <Compile Remove="Data\Migrations\20230318150703_AddDefaultUserRoleConfigurations.Designer.cs" />
+    <Compile Remove="Data\Migrations\20230318170752_AddDefaultUserRoes.cs" />
+    <Compile Remove="Data\Migrations\20230318170752_AddDefaultUserRoes.Designer.cs" />
+    <Compile Remove="Data\Migrations\20230318171543_AddDefaultUserRoes1.cs" />
+    <Compile Remove="Data\Migrations\20230318171543_AddDefaultUserRoes1.Designer.cs" />
+    <Compile Remove="Data\Migrations\20230318172811_AddDefaultUserRoes2.cs" />
+    <Compile Remove="Data\Migrations\20230318172811_AddDefaultUserRoes2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20230318173247_AddDefaultUserRole2.cs" />
+    <Compile Remove="Data\Migrations\20230318173247_AddDefaultUserRole2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20230318173446_AddDefaultUserRole.cs" />
+    <Compile Remove="Data\Migrations\20230318173446_AddDefaultUserRole.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.14" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.14" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.14" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.14" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.14" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.12" />
+    <PackageReference Include="entityframework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
   </ItemGroup>
 
 </Project>
